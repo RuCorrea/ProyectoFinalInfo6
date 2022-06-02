@@ -12,5 +12,10 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+<<<<<<< HEAD
     .sass('resources/sass/app.scss', 'public/css')
     .sourceMaps();
+=======
+    .vue()
+    .sass('resources/sass/app.scss', 'public/css');
+>>>>>>> 4010a5f74f96cb433a152628affb3399a1a9405d
