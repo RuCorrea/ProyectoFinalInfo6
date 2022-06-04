@@ -1,0 +1,116 @@
+/* Modelos -> Clases, tienen interaccion con las bases de datos
+Vista -> La ve el usuario
+Controladores -> Enmedio de las BD y las vistas
+
+Bootstrap -> Framework de FrontEnd
+Config -> Configuraciones de la App en ambiente de producción
+.env -> Archivo con todas las Configuraciones en ambiente de desarrollo
+migraciones
+database -> seeders -> Inserts en ambiente productivo, sirve para los 'catalogos'
+lang -> Lenguaje de nuestra App
+Public -> Carpeta publica que contiene los js y CSS (Informacion que no comprometa la App)
+Resouces -> Aqui se contienen las vistas 'view'
+routes -> Las rutas hacia los Controladores
+storage -> Informacion que se almacena
+test -> Pruebas unitarias
+Vendors -> Carpeta que contiene las librerias
+
+.gitignore -> ignora lo que este en el archivo para no enviarlo a repositorio
+
+\app\Console\ -> 
+\app\exceptions\ ->
+\app\Http\ -> 
+*/
+
+Las rutas se definen en web.php y son uno de los temas más importantes en un
+Framework y su estructura es: 
+        Route::get('ruta' , 'Controlador'@'' )
+        Route::
+
+
+ ----------------------------------------------------------------
+|                                                                |
+|               C R E A R   C O N T R O L A D O R                |
+|                                                                |
+ ----------------------------------------------------------------
+
+                make:controller [Option] [Name]
+        ejemplo: php artisan make:controller PostController
+
+El controlador se crea en la ruta: app > Http > Controllers 
+Todos los controladores tienen 6 metodos por Default para operaciones CROD 
+El metodo Index en el 90% de las veces llamará vistas
+Metodo Create ->
+Metodo store -> Mostrar información con opción a editar
+Metodo Show -> Mostrar informacion sin opcion de editar 
+Metodo Edit -> 
+Metodo Update -> Encargado de actualizar la información en la BD
+Metodo Destroy -> Encargado de eliminar datos de la BD
+
+
+Codigo del PostController:
+
+class PostController extends Controller
+{
+    //
+    public function index(){
+        echo "Hola Mundo desde un controlador";
+    }
+}
+
+
+        C O N T R O L A D O R  T I P O  R E S O U R C E
+
+Usaremos actividades CRUD
+
+php artisan make:controller PostController -r
+
+
+
+ ----------------------------------------------------------------
+|                                                                |
+|                      C R E A R   R U T A                       |
+|                                                                |
+ ----------------------------------------------------------------
+
+Ejemplos:
+
+        Route::get ('home')
+        Route::get ('/post', [PostController, index()]);
+        Route::resource('/post', PostController::class);
+
+
+ -----------------------------------------------------------------
+|                                                                 |
+|                       M I G R A C I O N E S                     |
+|                                                                 |
+ -----------------------------------------------------------------
+
+El objetivo es crear tablas u administrarlas directamente desde nuestro proyecto en Laravel
+Se pueden crear, actualizar y eliminar tablas en la base de datos. 
+Las migraciones se ubican dentro del directorio:
+                
+                database/migrations
+
+En terminal se usa $ php artisan migrate
+
+                php artisan migrate:rollback -step=1
+
+Crear una migración:
+
+                php artisan make:migration create_posts_table
+
+Agregar columnas a una Migracion: Consultar documentación de Laravel
+para ver todos los tipos de columnas disponibles.
+
+
+
+
+           Buscar como instalar Bootstrap en Laravel
+
+     
+
+
+GqTTnYzVmyxwF3QclITkEMGPaWrvJWqu5f7zmWwI
+
+XskbLQ1hps3H2bbXkxA9SmMt33fX1X7vwYXIv5z2
