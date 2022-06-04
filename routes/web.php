@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,15 +16,6 @@ use App\Http\Controllers\PostController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::middleware(['admin'])->group(function () {
-    //Este middleware sirve para proteger las rutas
-    Route::resource('/post', PostController::class);
-    Route::resource('/category', PostController::class);
-
-});
-
-
 
 Auth::routes();
 
