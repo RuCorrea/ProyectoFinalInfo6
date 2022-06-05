@@ -7,17 +7,17 @@ use Illuminate\Http\Request;
 class AnticipoController extends Controller
 {
     public function index(){
-        return "Esta es la pagina principal de anticipos";
+        return view('anticipos.index');
 
     }
 
     public function create(){
-        return "Esta es la pagina para registar un anticipo";
+        return view('anticipos.create');
 
     }
 
     public function show($supplier){
-        return "Esta es la pagina para mostrar los anticipos de $supplier";
+        return view('anticipos.show',['supplier' => $supplier]);
 
     }
 }
