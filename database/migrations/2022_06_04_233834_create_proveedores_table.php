@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('domicilio',200);
             $table->string('email',100);
             $table->string('telefono',10);
-        })
+        });
     }
 
     /**

@@ -16,14 +16,14 @@ return new class extends Migration
         Schema::create('proyectos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre',200);
-            $tabe->timestamp('fecha');
+            $table->timestamp('fecha');
             $table->float('subtotal');
             $table->float('iva');
             $table->float('total');
             $table->string('concepto',100);
             $table->string('comentarios_adicionales',1000);
 
-        })
+        });
     }
 
     /**

@@ -18,11 +18,11 @@ return new class extends Migration
             $table->foreignId('clientes_id')->constrained('clientes');
             $table->foreignId('proyecto_id')->constrained('proyectos');
             $table->float('monto');
-            $tabe->timestamp('fecha');
+            $table->timestamp('fecha');
             $table->string('metodo',15);
             $table->string('referencia',100);
 
-        })
+        });
     }
 
     /**
