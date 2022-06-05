@@ -7,17 +7,17 @@ use Illuminate\Http\Request;
 class ProveedorController extends Controller
 {
     public function index(){
-        return "Esta es la pagina principal de proveedores";
+        return view('proveedores.index');
 
     }
 
     public function create(){
-        return "Esta es la pagina para crear un proveedores";
+        return view('proveedores.create');
 
     }
 
     public function show($supplier){
-        return "Esta es la pagina para mostrar el proveedor $supplier";
+        return view('proveedores.show',['supplier' => $supplier]);
 
     }
 }

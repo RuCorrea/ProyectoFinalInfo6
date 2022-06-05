@@ -7,17 +7,17 @@ use Illuminate\Http\Request;
 class ProyectoController extends Controller
 {
     public function index(){
-        return "Esta es la pagina principal de proyectos";
+        return view('proyectos.index');
 
     }
 
     public function create(){
-        return "Esta es la pagina para crear un proyecto";
+        return view('proyectos.create');
 
     }
 
-    public function show($proyecto){
-        return "Esta es la pagina para mostrar el proyecto $proyecto";
+    public function show($proyect){
+        return view('proyectos.show',['proyects' => $proyect]);
 
     }
 }

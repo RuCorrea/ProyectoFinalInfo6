@@ -7,17 +7,17 @@ use Illuminate\Http\Request;
 class ClienteController extends Controller
 {
     public function index(){
-        return "Esta es la pagina principal de clientes";
+        return view('clientes.index');
 
     }
 
     public function create(){
-        return "Esta es la pagina para crear un cliente";
+        return view('clientes.create');
 
     }
 
     public function show($client){
-        return "Esta es la pagina para mostrar al cliente $client";
+        return view('clientes.show',['supplier' => $client]);
 
     }
 }

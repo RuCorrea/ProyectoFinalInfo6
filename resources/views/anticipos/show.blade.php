@@ -13,7 +13,11 @@
         @include('fragments.nav-bar')
         @yield('content')
     </div>
-    <h1>Esta es la pagina para mostrar anticipos</h1>
+    <h1>Esta es la pagina para mostrar anticipos
+        @php
+        echo $advance;
+        @endphp
+    </h1>
         
     
 </body>

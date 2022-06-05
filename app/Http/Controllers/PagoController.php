@@ -7,17 +7,17 @@ use Illuminate\Http\Request;
 class PagoController extends Controller
 {
     public function index(){
-        return "Esta es la pagina principal de pagos";
+        return view('pagos.index');
 
     }
 
     public function create(){
-        return "Esta es la pagina para registrar un pago";
+        return view('pagos.create');
 
     }
 
-    public function show($supplier){
-        return "Esta es la pagina para mostrar los pagos de $supplier";
+    public function show($payment){
+        return view('pagos.show',['payments' => $payment]);
 
     }
 }

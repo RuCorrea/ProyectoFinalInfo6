@@ -16,8 +16,8 @@ class AnticipoController extends Controller
 
     }
 
-    public function show($supplier){
-        return view('anticipos.show',['supplier' => $supplier]);
+    public function show($advance){
+        return view('anticipos.show',['supplier' => $advance]);
 
     }
 }
