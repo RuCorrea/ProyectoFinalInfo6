@@ -10,7 +10,11 @@
       </div>
       <div class="mb-3">
         <label for="persona_moral/fisica" class="form-label">Tipo de razón social</label>
-        <input type="text" class="form-control" name="persona_moral/fisica"id="persona_moral/fisica" value="">
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Selecciona tipo de persona</option>
+          <option value="0">Persona Moral</option>
+          <option value="1">Persona Física</option>
+        </select>
       </div>
       <div class="mb-3">
         <label for="rfc" class="form-label">RFC</label>
