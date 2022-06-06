@@ -11,9 +11,15 @@
 <body>
     <div class="container">
         @include('fragments.nav-bar')
+        
         @yield('content')
+
     </div>
     <h1>Esta es la pagina para agregar clientes</h1>
+
+    <div class="container">
+    @include('clientes._form')
+    </div>
         
     
 </body>

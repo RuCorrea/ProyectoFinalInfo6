@@ -14,6 +14,8 @@
         @yield('content')
     </div>
     <h1>Esta es la pagina principal de clientes</h1>
+
+    <button type="input" class="btn btn-primary" href="/clientes/create">Agregar</button>
         
     
 </body>
