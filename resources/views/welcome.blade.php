@@ -27,6 +27,35 @@
             @include('fragments.nav-bar')
             @yield('content')
         </div>
+
+        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+            
+            <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
+                <article id="top" class="wrapper style4">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4 col-5-large col-12-medium">
+                                <span class="image fit"><img src="images/sist.png" alt="" /></span>
+                            </div>
+                            </div>
+                    </div>
+                </article>
+                <svg width="1300" height="600">
+                    <text x="100" y="200" font-size="90"> 
+                        Sistema
+                    </text>
+                    <text x="100" y="300" font-size="90"> 
+                        para la gestión
+                    </text>
+                    <text x="100" y="400" font-size="90"> 
+                        de Clientes y 
+                    </text>
+                    <text x="100" y="500" font-size="90"> 
+                        Proveedores.
+                    </text>
+                  </svg>
+            </div>
+        
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -48,5 +77,9 @@
         <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
             Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
         </div>
+
+        
     </body>
 </html>
+
+

@@ -24,9 +24,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('proyecto', [ProyectoController::class, 'index']); //Se coloca el array para que no busque el metodo invoke
-Route::get('proyecto/create', [ProyectoController::class, 'create']);
-Route::get('proyecto/{proyecto}', [ProyectoController::class, 'show']);
+Route::get('proyectos', [ProyectoController::class, 'index']); //Se coloca el array para que no busque el metodo invoke
+Route::get('proyectos/create', [ProyectoController::class, 'create']);
+Route::get('proyectos/{proyecto}', [ProyectoController::class, 'show']);
 
 Route::controller(ClienteController::class)->group(function(){ //Hace lo mismo que el codigo de arriba pero con grupo de rutas
     Route::get('clientes', 'index');
