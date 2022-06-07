@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('proveedores', function (Blueprint $table) {
             $table->id();
             $table->string('razon_social',200);
-            $table->boolean('persona_moral/fisica')->default(0);
+            $table->boolean('tipo_de_persona')->default(0);
             $table->string('rfc',13);
             $table->string('domicilio',200);
             $table->string('email',100);
