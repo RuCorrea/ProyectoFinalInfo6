@@ -15,8 +15,36 @@
     </div>
     <h1>Esta es la pagina principal de clientes</h1>
 
-    <button type="input" class="btn btn-primary" href="/clientes/create">Agregar</button>
-        
     
+    <a href="{{ route('clientes.create') }}" class="btn btn-success">Agregar</a>
+        
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Razon Social</th>
+            <th scope="col">Tipo de persona</th>
+            <th scope="col">RFC</th>
+            <th scope="col">Domicilio</th>
+            <th scope="col">email</th>
+            <th scope="col">Telefono</th>
+            <th scope="col" colspan="2">Options</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach ($clientes as $cliente)
+            <tr>
+            <th scope="row">{{ $cliente->id }}</th>
+              <td>{{ $cliente->razon_social }}</td>
+              <td>{{ $cliente->tipo_de_persona }}</td>
+              <td>{{ $cliente->rfc }}</td>
+              <td>{{ $cliente->domicilio }}</td>
+              <td>{{ $cliente->email }}</td>
+              <td>{{ $cliente->telefono }}</td>
+              
+            </tr> 
+          @endforeach
+    
+        </tbody>
+      </table>
 </body>
 </html>

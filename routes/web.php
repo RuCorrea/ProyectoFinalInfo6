@@ -30,7 +30,7 @@ Route::get('proyectos/{proyecto}', [ProyectoController::class, 'show']);
 
 Route::controller(ClienteController::class)->group(function(){ //Hace lo mismo que el codigo de arriba pero con grupo de rutas
     Route::get('clientes', 'index');
-    Route::get('clientes/create', 'create');
+    Route::get('clientes.create', 'create')->name('clientes.create');
     Route::get('clientes/{client}', 'show');
 });
 

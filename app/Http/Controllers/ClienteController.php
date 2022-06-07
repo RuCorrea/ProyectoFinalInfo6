@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Cliente;
 
 class ClienteController extends Controller
 {
@@ -14,6 +15,13 @@ class ClienteController extends Controller
     public function index()
     {
         //
+        /*$clientes = Clientes::orderBy('created_at', 'desc')->paginate(2);
+        //dd($posts);
+        return view('clientes.index', [
+            'clientes' => $clientes
+        ]);
+        */
+        return view('clientes.index');
     }
 
     /**
@@ -24,6 +32,9 @@ class ClienteController extends Controller
     public function create()
     {
         //
+        return view('clientes.create', [
+            'cliente' => new Cliente()
+        ]);
     }
 
     /**
@@ -32,9 +43,13 @@ class ClienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreClientesRequest $request)
     {
         //
+        Clientes::create($request->validated());
+
+        return back()->with('status', 'Post created successfully');
+
     }
 
     /**
