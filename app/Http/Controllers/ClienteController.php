@@ -15,13 +15,13 @@ class ClienteController extends Controller
     public function index()
     {
         //
-        /*$clientes = Clientes::orderBy('created_at', 'desc')->paginate(2);
+        $clientes = Cliente::orderBy('created_at', 'desc')->paginate(2);
         //dd($posts);
         return view('clientes.index', [
             'clientes' => $clientes
         ]);
-        */
-        return view('clientes.index');
+        
+        //return view('clientes.index');
     }
 
     /**
