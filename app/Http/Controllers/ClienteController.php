@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreClienteRequest;
 use Illuminate\Http\Request;
 use App\Models\Cliente;
 
@@ -46,9 +47,22 @@ class ClienteController extends Controller
     public function store(StoreClientesRequest $request)
     {
         //
+        //echo "Post Store";
+        //var_dump($request);
+        //dd($request);
+        
+        /*$validated = $request->validate([
+            'title' => 'required | min:5 | max:500',
+            'url_clean' => 'required',
+            'content' => 'min:1 | max:500'
+        ]);*/
+
+        //dd($validated);
+        //dd($request->validated());
+
         Clientes::create($request->validated());
 
-        return back()->with('status', 'Post created successfully');
+        return back()->with('status', 'Cliente created successfully');
 
     }
 

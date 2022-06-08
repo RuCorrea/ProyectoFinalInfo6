@@ -19,13 +19,8 @@
 
     <form method="CLIENTE" action="{{ route('cliente.store') }}">
         @csrf
-        @include('cliente._form')
+        @include('clientes._form')
       </form>
-
-    <div class="container">
-    @include('clientes._form')
-    </div>
-        
     
 </body>
 </html>

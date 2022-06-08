@@ -28,6 +28,8 @@ Route::get('proyectos', [ProyectoController::class, 'index']); //Se coloca el ar
 Route::get('proyectos/create', [ProyectoController::class, 'create']);
 Route::get('proyectos/{proyecto}', [ProyectoController::class, 'show']);
 
+Route::resource('cliente', ClienteController::class);
+
 Route::controller(ClienteController::class)->group(function(){ //Hace lo mismo que el codigo de arriba pero con grupo de rutas
     Route::get('clientes', 'index');
     Route::get('clientes.create', 'create')->name('clientes.create');
