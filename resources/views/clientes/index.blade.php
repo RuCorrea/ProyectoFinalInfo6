@@ -21,6 +21,7 @@
     <table class="table table-hover">
         <thead>
           <tr>
+            <th scope="col">ID</th>
             <th scope="col">Razon Social</th>
             <th scope="col">Tipo de persona</th>
             <th scope="col">RFC</th>

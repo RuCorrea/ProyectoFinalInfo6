@@ -17,10 +17,11 @@
     </div>
     <h1>Esta es la pagina para agregar clientes</h1>
 
-    <form method="CLIENTE" action="{{ route('cliente.store') }}">
+    
+    <form method="POST" action="{{ route("cliente.store") }}">
         @csrf
         @include('clientes._form')
-      </form>
+    </form>
     
 </body>
 </html>

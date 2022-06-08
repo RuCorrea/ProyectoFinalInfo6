@@ -44,7 +44,7 @@ class ClienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreClientesRequest $request)
+    public function store(StoreClienteRequest $request)
     {
         //
         //echo "Post Store";
@@ -60,7 +60,7 @@ class ClienteController extends Controller
         //dd($validated);
         //dd($request->validated());
 
-        Clientes::create($request->validated());
+        Cliente::create($request->validated());
 
         return back()->with('status', 'Cliente created successfully');
 
