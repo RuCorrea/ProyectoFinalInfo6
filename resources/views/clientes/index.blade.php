@@ -15,9 +15,7 @@
     </div>
     <h1>Esta es la pagina principal de clientes</h1>
 
-    
-    <a href="{{ route('clientes.create') }}" class="btn btn-success">Agregar</a>
-        
+            
     <table class="table table-hover">
         <thead>
           <tr>
@@ -47,5 +45,6 @@
     
         </tbody>
       </table>
+      <a href="{{ route('clientes.create') }}" class="btn btn-success">Agregar</a>
 </body>
 </html>
