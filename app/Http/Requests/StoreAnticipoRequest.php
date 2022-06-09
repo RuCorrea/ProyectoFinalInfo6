@@ -24,7 +24,11 @@ class StoreAnticipoRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            // Reglas para el request de Anticipos
+            'monto' => 'required',
+            'fecha' => 'required',
+            'metodo' => 'required',
+            'referencia' => 'required'           
         ];
     }
 }

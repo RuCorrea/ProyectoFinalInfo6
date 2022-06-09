@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreProyectoRequest;
 use App\Models\Proyecto;
 use Illuminate\Http\Request;
 
@@ -30,7 +31,7 @@ class ProyectoController extends Controller
     public function create()
     {
         //
-        return view('proyectos.create');
+        return view('proyectos.create', ['cliente' => new Proyecto()]);
     }
 
     /**
@@ -39,9 +40,13 @@ class ProyectoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProyectoRequest $request)
     {
         //
+        Proyecto::create($request->validated());
+        return back()->with('status', 'Proyecto creado correctamente');
+
+
     }
 
     /**

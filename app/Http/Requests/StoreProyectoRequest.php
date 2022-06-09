@@ -25,6 +25,15 @@ class StoreProyectoRequest extends FormRequest
     {
         return [
             //
+            'nombre' => 'required',
+            'fecha' => 'required',
+            'subtotal' => 'required',
+            'iva' => 'required', 
+            'total' => 'required',
+            'concepto' => 'required',
+            'comentarios_adicionales' => 'required'
+
+
         ];
     }
 }

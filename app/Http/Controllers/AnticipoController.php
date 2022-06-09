@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreAnticipoRequest;
 use App\Models\Anticipo;
 use Illuminate\Http\Request;
 
@@ -30,7 +31,8 @@ class AnticipoController extends Controller
     public function create()
     {
         //
-        return view('anticipos.create');
+        return view('anticipos.create', ['anticipo' => new Anticipo()]);
+
     }
 
     /**
@@ -39,9 +41,12 @@ class AnticipoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreAnticipoRequest $request)
     {
         //
+        Anticipo::create($request->validated());
+        return back()->with('status', 'El anticipo se registro correctamente');
+
     }
 
     /**

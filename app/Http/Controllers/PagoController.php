@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePagoRequest;
 use App\Models\Pago;
 use Illuminate\Http\Request;
 
@@ -30,7 +31,7 @@ class PagoController extends Controller
     public function create()
     {
         //
-        return view('pagos.create');
+        return view('pagos.create', ['pago' => new Pago()]);
     }
 
     /**
@@ -39,9 +40,11 @@ class PagoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePagoRequest $request)
     {
         //
+        Pago::create($request->validated());
+        return back()->with('status', 'pago registrado correctamente');
     }
 
     /**

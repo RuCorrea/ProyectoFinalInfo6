@@ -25,6 +25,11 @@ class StorePagoRequest extends FormRequest
     {
         return [
             //
+            'monto' => 'required',
+            'fecha' => 'required',
+            'metodo' => 'required',
+            'referencia' => 'required'  
+            
         ];
     }
 }

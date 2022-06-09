@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreProveedorRequest;
 use App\Models\Proveedore;
 use Illuminate\Http\Request;
 
@@ -31,7 +32,7 @@ class ProveedorController extends Controller
     public function create()
     {
         //
-        return view('proveedores.create');
+        return view('proveedores.create', ['proveedor'=> new Proveedore()]);
 
     }
 
@@ -41,9 +42,12 @@ class ProveedorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProveedorRequest $request)
     {
         //
+        Proveedore::create($request->validated());
+
+        return back()->with('status', 'Se registro el proveedor correctamente');
     }
 
     /**

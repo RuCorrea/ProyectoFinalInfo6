@@ -25,6 +25,14 @@ class StoreProveedorRequest extends FormRequest
     {
         return [
             //
+            'razon_social' => 'required',
+            'tipo_de_persona' => 'required',
+            'rfc' => 'required',
+            'domicilio' => 'required',
+            'email' => 'required',
+            'telefono' => 'required',
+            
+
         ];
     }
 }

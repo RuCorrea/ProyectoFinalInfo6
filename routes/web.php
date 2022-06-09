@@ -47,7 +47,7 @@ Route::resource('proveedores', ProveedorController::class);
 
 Route::resource('pagos', ProveedorController::class);
 
-Route::resource('Anticipos', AnticipoController::class);
+Route::resource('anticipos', AnticipoController::class);
 
 Auth::routes();
 
