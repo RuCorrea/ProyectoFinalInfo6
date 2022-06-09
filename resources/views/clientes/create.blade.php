@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{ asset("css/app.css") }}">
     <script src="{{ asset("js/app.js") }}"></script>
 </head>
+@include('fragments.validation-errors')
+@include('fragments.sesion')
 <body>
     <div class="container">
         @include('fragments.nav-bar')
@@ -18,7 +20,7 @@
     <h1>Esta es la pagina para agregar clientes</h1>
 
     
-    <form method="POST" action="{{ route("cliente.store") }}">
+    <form method="post" action="{{ route('clientes.store') }}">
         @csrf
         @include('clientes._form')
     </form>

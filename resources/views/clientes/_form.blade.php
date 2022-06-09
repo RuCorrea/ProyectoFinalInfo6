@@ -1,7 +1,7 @@
 
       
       
-      <div class="mb-3">
+      <div class="form-gorup">
         <label for="razon_social" class="form-label">Razón Social</label>
         <input type="text" class="form-control" name="razon_social"id="razon_social" value="{{ old('razon_social', $cliente->razon_social) }}">
       </div>

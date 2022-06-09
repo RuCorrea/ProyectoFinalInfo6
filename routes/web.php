@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AnticipoController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ClienteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -24,37 +25,29 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('proyectos', [ProyectoController::class, 'index']); //Se coloca el array para que no busque el metodo invoke
-Route::get('proyectos/create', [ProyectoController::class, 'create']);
-Route::get('proyectos/{proyecto}', [ProyectoController::class, 'show']);
+/* Route::middleware(['admin'])->group(function(){
+
+    Route::resource('proyectos', ProyectoController::class);
+
+    Route::resource('clientes', ClienteController::class);
+
+    Route::resource('proveedores', ProveedorController::class);
+
+    Route::resource('pagos', ProveedorController::class);
+
+    Route::resource('Anticipos', AnticipoController::class);
+
+}); */
+
+Route::resource('proyectos', ProyectoController::class);
 
 Route::resource('clientes', ClienteController::class);
 
-/*Route::controller(ClienteController::class)->group(function(){ //Hace lo mismo que el codigo de arriba pero con grupo de rutas
-    Route::get('clientes', 'index');
-    Route::get('clientes.create', 'create')->name('clientes.create');
-    Route::get('clientes/{client}', 'show');
-});
-*/
-//Route::resource('/clientes', ClienteController::class);
+Route::resource('proveedores', ProveedorController::class);
 
-Route::controller(ProveedorController::class)->group(function(){ //Hace lo mismo que el codigo de arriba pero con grupo de rutas
-    Route::get('proveedores', 'index');
-    Route::get('proveedores/create', 'create');
-    Route::get('proveedores/{supplier}', 'show');
-});
+Route::resource('pagos', ProveedorController::class);
 
-Route::controller(PagoController::class)->group(function(){ //Hace lo mismo que el codigo de arriba pero con grupo de rutas
-    Route::get('pagos', 'index');
-    Route::get('pagos/create', 'create');
-    Route::get('pagos/{supplier}', 'show');
-});
-
-Route::controller(AnticipoController::class)->group(function(){ //Hace lo mismo que el codigo de arriba pero con grupo de rutas
-    Route::get('anticipos', 'index');
-    Route::get('anticipos/create', 'create');
-    Route::get('anticipos/{supplier}', 'show');
-});
+Route::resource('Anticipos', AnticipoController::class);
 
 Auth::routes();
 

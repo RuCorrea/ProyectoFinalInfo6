@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreClienteRequest;
 use Illuminate\Http\Request;
 use App\Models\Cliente;
+use Illuminate\Support\Facades\DB;
 
 class ClienteController extends Controller
 {
@@ -62,7 +63,7 @@ class ClienteController extends Controller
 
         Cliente::create($request->validated());
 
-        return back()->with('status', 'Cliente created successfully');
+        return back()->with('status', 'Cliente creado correctamente');
 
     }
 
