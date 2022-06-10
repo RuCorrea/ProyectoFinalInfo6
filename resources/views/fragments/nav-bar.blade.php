@@ -12,7 +12,15 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/proyectos">Proyectos</a>
-          </li>         
+          </li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/anticipos">Anticipos</a>
+        </li>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/pagos">Pagos</a>
+      </li>               
         </ul>
       </div>
     </div>
