@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Anticipo extends Model
 {
     use HasFactory;
+    protected $fillable = ['clientes', 'proyectos', 'monto','fecha','metodo','referencia'];
 }

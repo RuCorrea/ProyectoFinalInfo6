@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Proyecto extends Model
 {
     use HasFactory;
+    protected $fillable = ['nombre', 'fecha', 'subtotal','iva','total','concepto','comentarios_adicionales'];
 }
